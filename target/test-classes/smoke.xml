@@ -7,14 +7,9 @@
             <class name="org.tms.test.LoginPageTest"/>
         </classes>
     </test>
-    <test name="Login Page Test1">
+    <test name="Basket Page Test">
         <classes>
-            <class name="org.tms.test.LoginPageTest"/>
-        </classes>
-    </test>
-    <test name="Login Page Test2">
-        <classes>
-            <class name="org.tms.test.LoginPageTest"/>
+            <class name="org.tms.test.BasketPageTest"/>
         </classes>
     </test>
 </suite>

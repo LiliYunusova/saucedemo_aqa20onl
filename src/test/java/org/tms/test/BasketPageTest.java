@@ -4,25 +4,26 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.tms.model.User;
+import org.tms.service.BasketPageService;
 import org.tms.service.InventoryPageService;
 import org.tms.service.LoginPageService;
 
-public class LoginPageTest extends BaseTest{
+public class BasketPageTest extends BaseTest {
 
     private LoginPageService loginPageService;
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         loginPageService = new LoginPageService();
     }
 
     @Test
-    public void loginTest(){
+    public void addToCardTest() {
         User user = new User("standard_user", "secret_sauce");
         InventoryPageService inventoryPageService = loginPageService.login(user);
-        String actualTextOfInventoryPage = inventoryPageService.getActualTextOfInventoryPage();
-        String expectedTextOfInventoryPage = "Products";
-        Assert.assertEquals(actualTextOfInventoryPage,expectedTextOfInventoryPage, "The actual text of the page does not match expected!");
-
+        BasketPageService basketPageService = inventoryPageService.addToCard();
+        String actualTextOfAddToBasket = basketPageService.getActualTextAddToCard();
+        String expectedTextOfAddToBasket = "Sauce Labs Backpack";
+        Assert.assertEquals(actualTextOfAddToBasket, expectedTextOfAddToBasket, "Nothing found");
     }
 }
