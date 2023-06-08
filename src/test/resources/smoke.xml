@@ -7,4 +7,9 @@
             <class name="org.tms.test.LoginPageTest"/>
         </classes>
     </test>
+    <test name="Basket Page Test">
+        <classes>
+            <class name="org.tms.test.BasketPageTest"/>
+        </classes>
+    </test>
 </suite>
